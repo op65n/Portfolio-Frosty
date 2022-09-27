@@ -1,26 +1,56 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Navigation />
+  <Description />
+  <div class="decoration">
+    <img alt="Decorations" src="./assets/Decorations.svg" />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Navigation from "./components/Navigation.vue"
+import Description from "./components/Description.vue";
 
 export default {
-  name: 'App',
+  name: "App",
+  data() {
+    return {};
+  },
   components: {
-    HelloWorld
-  }
-}
+    Navigation,
+    Description,
+  },
+};
 </script>
 
 <style>
+@font-face {
+    font-family: 'Jomhuria';
+    src: url("./fonts/Jomhuria-Regular.ttf");
+}
+@font-face {
+    font-family: 'Markazi Text'; 
+    src: url('./fonts/MarkaziText-VariableFont_wght.ttf'); 
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  width: 100%;
+  height: 100%;
+  background-color: #212222;
+}
+.text {
+  margin-left: 500px;
+  margin-top: 350px;
+
+  font-family: "Jomhuria";
+  font-style: normal;
+}
+.decoration {
+  position: absolute;
+
+  left: 45px;
+  bottom: 43px;
 }
 </style>
