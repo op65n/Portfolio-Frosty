@@ -15,7 +15,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .text-welcome {
   font-size: 56px;
   line-height: 45px;

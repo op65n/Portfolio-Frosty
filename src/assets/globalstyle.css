@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "Jomhuria";
+    src: url("./fonts/Jomhuria-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Markazi Text";
+    src: url("./fonts/MarkaziText-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "Molengo";
+    src: url("./fonts/Molengo-Regular.ttf")
+}
