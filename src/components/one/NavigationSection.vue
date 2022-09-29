@@ -1,39 +1,103 @@
 <template>
   <nav class="navigation">
-    <router-link :to="{ path: '/information', hash: '#contact' }">Contact</router-link>
-    <router-link :to="{ path: '/information', hash: '#experience' }">Experience</router-link>
-    <router-link :to="{ path: '/information', hash: '#about' }">About Me</router-link>
+    <ul
+      class="wrapper"
+      @mouseenter="executeEnter(item)"
+      @mouseleave="executeLeave(item)"
+      v-for:="item in navigations"
+    >
+      <Transition name="slide" mode="out-in">
+        <div class="text" :key="item.value">
+          <router-link
+            class="a"
+            :to="{ path: '/information', hash: item.hash }"
+          >
+            {{ item.value }}
+          </router-link>
+        </div>
+      </Transition>
+    </ul>
   </nav>
 </template>
 
-<style>
+<script setup>
+import { ref } from "vue";
+
+function executeEnter(item) {
+  item.value = item.text;
+}
+
+function executeLeave(item) {
+  item.value = item.letter;
+}
+
+const navigations = ref([
+  {
+    hash: "#contact",
+    letter: "C",
+    text: "Contact",
+    value: "C",
+  },
+  {
+    hash: "#experience",
+    letter: "E",
+    text: "Experience",
+    value: "E",
+  },
+  {
+    hash: "#about",
+    letter: "A",
+    text: "About Me",
+    value: "A",
+  },
+]);
+</script>
+
+<style scoped>
 .navigation {
   font-family: "Jomhuria";
   font-style: normal;
-  font-size: 32px;
-  line-height: 32px;
-  text-align: center;
+  font-size: 60px;
+  line-height: 60px;
 
   position: absolute;
-  right: 0px;
-  padding-top: 10px;
+  top: 40%;
+  right: 20px;
 }
 
-.navigation span {
-  margin: 0 0;
-  display: flex;
-  justify-content: space-between;
-  list-style-type: none;
+.navigation li {
+  list-style: none;
+}
 
+.navigation ul {
+  margin: 0px;
+}
+
+.a {
+  text-decoration: none;
+  min-width: 30px;
   color: #b4c9ff;
 }
 
-.navigation span a {
-  padding-right: 10px;
-  text-decoration: underline #3d3d3d;
+.wrapper {
+  width: 200px;
 }
 
-.navigation span a:hover {
-  color: #ffffff;
+.text {
+  text-align: right;
+}
+
+.slide-enter-active {
+  transition: all 0.2s ease-out;
+}
+
+.slide-leave-active {
+  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
 }
 </style>

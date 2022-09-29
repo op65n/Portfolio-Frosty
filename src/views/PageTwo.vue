@@ -1,22 +1,22 @@
 <template>
   <div class="page">
-    <div id="about" class="about">
+    <div id="about" class="about container">
       <span class="prefix">> </span><span class="title">About Me</span> <br />
       <about-section />
     </div>
-    <div id="experience" class="experience">
+    <div id="experience" class="experience container">
       <span class="prefix">> </span><span class="title">Experience</span> <br />
       <experience-section />
     </div>
-    <div class="projects">
+    <div class="projects container">
       <span class="prefix">> </span><span class="title">Projects</span> <br />
       <projects-section />
     </div>
-    <div id="contact" class="contact">
+    <div id="contact" class="contact container">
       <span class="prefix">> </span><span class="title">Contact</span> <br />
       <contact-section />
     </div>
-    <div class="footer">
+    <div class="footer container">
       <footer-section />
     </div>
   </div>
@@ -52,9 +52,8 @@ onMounted(() => {
 
 <style scoped>
 .page {
-  position: absolute;
-  top: 100px;
-  left: 200px;
+  width: 80%;
+  margin: 20px auto;
 }
 
 .title {
@@ -68,6 +67,7 @@ onMounted(() => {
 
   color: #d4e5ff;
 }
+
 .prefix {
   font-family: "Jomhuria";
   font-style: normal;
@@ -76,5 +76,10 @@ onMounted(() => {
   line-height: 40px;
 
   color: #ffffff;
+}
+
+.container {
+  display: block;
+  margin-bottom: 20px;
 }
 </style>

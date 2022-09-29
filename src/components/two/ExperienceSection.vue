@@ -3,12 +3,12 @@
     <li v-for:="item in experience">
       <span class="marker">·</span>
       <span class="experience-title">{{ item.title }}</span>
-      <span class="server">{{ item.server }}</span>
+      <span class="server"><a :href="item.link">{{ item.server }}</a></span>
       <span class="attribute">{{ item.attribute }}</span>
       <br />
       <div class="text-description">
         <span class="description" v-for:="text in item.description">
-          {{ text }}
+          {{ text }} <br>
         </span>
       </div>
     </li>
@@ -20,6 +20,7 @@ const experience = [
   {
     title: "Plugin Developer",
     server: "@CraftYourTown",
+    link: "https://craftyourtown.com/",
     description: [
       "Tasked with creating various plugins, ranging from QOL additions, to entirely new features (Economy)",
     ],
@@ -27,6 +28,7 @@ const experience = [
   {
     title: "Plugin Developer",
     server: "@Minecraft.SI",
+    link: "https://minecraft.si/",
     description: [
       "Worked with other developers to create simple utilities, to entire frameworks",
       "Maintained and created various game changing plugins",
@@ -35,13 +37,15 @@ const experience = [
   {
     title: "Plugin Developer",
     server: "@SloSurvival",
-    attribute: "(Merged into Minecraft.SI)",
+    link: "https://minecraft.si/",
+    attribute: " (Merged into Minecraft.SI)",
     description: ["Developed various performant plugins"],
   },
   {
     title: "Freelance & Contribution Projects",
     description: [
-      "Amongst a few servers I have also worked for a lot of people/servers as a freelance developer nad have also contributed to quite a few Open Sourced projects, some of the projects/task listed bellow.",
+      "Amongst a few servers I have also worked for a lot of people/servers as a freelance developer nad have also contributed",
+      "to quite a few Open Sourced projects, some of the projects/task listed bellow.",
     ],
   },
 ];
@@ -58,6 +62,9 @@ ul {
 
   list-style-type: none;
 }
+li {
+  padding-bottom: 30px;
+}
 .marker {
   display: inline-block;
   margin-right: 30px;
@@ -65,7 +72,8 @@ ul {
 .experience-title {
   margin-right: 15px;
 }
-.server {
+.server a {
+  text-decoration: none;
   color: #b4c9ff;
 }
 .attribute {
