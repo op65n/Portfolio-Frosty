@@ -22,7 +22,7 @@
       >These are just a handful of projects I’ve made for others/myself. Most
       server related projects, and custom commissions I am not <br />
       able to disclose, however I try my best to Open Source as many projects as
-      I can, which you can find bellow on my GitHub.</span
+      I can, which you can find on my GitHub.</span
     >
   </div>
 </template>

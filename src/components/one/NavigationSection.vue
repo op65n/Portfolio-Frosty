@@ -33,22 +33,16 @@ function executeLeave(item) {
 
 const navigations = ref([
   {
-    hash: "#contact",
-    letter: "C",
-    text: "Contact",
-    value: "C",
-  },
-  {
     hash: "#experience",
-    letter: "E",
+    letter: "🗀",
     text: "Experience",
-    value: "E",
+    value: "🗀",
   },
   {
     hash: "#about",
-    letter: "A",
+    letter: "🕮",
     text: "About Me",
-    value: "A",
+    value: "🕮",
   },
 ]);
 </script>
@@ -61,7 +55,7 @@ const navigations = ref([
   line-height: 60px;
 
   position: absolute;
-  top: 40%;
+  top: 40px;
   right: 20px;
 }
 
@@ -75,7 +69,7 @@ const navigations = ref([
 
 .a {
   text-decoration: none;
-  min-width: 30px;
+  min-width: 40px;
   color: #b4c9ff;
 }
 

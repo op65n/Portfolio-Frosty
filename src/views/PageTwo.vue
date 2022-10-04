@@ -1,5 +1,6 @@
 <template>
   <div class="page">
+    <hr class="solid">
     <div id="about" class="about container">
       <span class="prefix">> </span><span class="title">About Me</span> <br />
       <about-section />
@@ -12,10 +13,7 @@
       <span class="prefix">> </span><span class="title">Projects</span> <br />
       <projects-section />
     </div>
-    <div id="contact" class="contact container">
-      <span class="prefix">> </span><span class="title">Contact</span> <br />
-      <contact-section />
-    </div>
+    <hr class="solid">
     <div class="footer container">
       <footer-section />
     </div>
@@ -24,7 +22,6 @@
 
 <script setup>
 import AboutSection from "../components/two/AboutSection.vue";
-import ContactSection from "../components/two/ContactSection.vue";
 import ExperienceSection from "../components/two/ExperienceSection.vue";
 import FooterSection from "../components/two/FooterSection.vue";
 import ProjectsSection from "../components/two/ProjectsSection.vue";
@@ -54,6 +51,13 @@ onMounted(() => {
 .page {
   width: 80%;
   margin: 20px auto;
+}
+
+.solid {
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  opacity: 30%;
 }
 
 .title {
